@@ -32,7 +32,7 @@ NOTE: Only hotspot was tested and native mode will probably not work.
    
 === Build quarkus-myfaces
 
-* Comment https://github.com/rmpestano/quarkus-myfaces/blob/12cf15b816c88a5fc67ca4ea9bdcb12fc48de4e4/quarkus-myfaces/runtime/src/main/java/io/quarkus/myfaces/runtime/myfaces/QuarkusCdiELResolver.java#L82-L85[this lines^] (see https://github.com/tandraschko/quarkus-myfaces/issues/2[this issue^])
+* comment out https://github.com/rmpestano/quarkus-myfaces/blob/12cf15b816c88a5fc67ca4ea9bdcb12fc48de4e4/quarkus-myfaces/runtime/src/main/java/io/quarkus/myfaces/runtime/myfaces/QuarkusCdiELResolver.java#L82-L85[this lines^] (see https://github.com/tandraschko/quarkus-myfaces/issues/2[this issue^])
 * `git clone https://github.com/rmpestano/quarkus-myfaces && cd quarkus-myfaces/quarkus-myfaces && mvn clean install`
 
 [TIP]
