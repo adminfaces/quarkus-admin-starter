@@ -64,5 +64,5 @@ To build the quarkus extension you need to add jboss maven repository to your ma
 
 Finally run this project: 
 
-* `mvn compile quarkus:dev`
+* `git clone https://github.com/adminfaces/quarkus-admin-starter && cd quarkus-admin-starter && mvn compile quarkus:dev`
 * access http://localhost:8080/
