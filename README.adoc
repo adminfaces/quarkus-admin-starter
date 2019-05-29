@@ -66,3 +66,10 @@ Finally run this project:
 
 * `git clone https://github.com/adminfaces/quarkus-admin-starter && cd quarkus-admin-starter && mvn compile quarkus:dev`
 * access http://localhost:8080/
+
+
+== Docker
+
+to run via docker execute the following commands:
+
+* `mvn clean package && docker build -f docker/Dockerfile.jvm -t quarkus/full-jvm . && docker run -i --rm -p 8080:8080 quarkus/full-jvm`

@@ -22,6 +22,7 @@ public class StartupListener implements ServletContextListener {
         sce.getServletContext().setInitParameter("javax.faces.PROJECT_STAGE", projectStage);
         sce.getServletContext().setInitParameter("primefaces.THEME", "admin");
         sce.getServletContext().setInitParameter("primefaces.FONT_AWESOME", "true");
+        sce.getServletContext().setInitParameter("javax.faces.FACELETS_RESOURCE_RESOLVER", "com.github.adminfaces.starter.CustomResourceResolver");
         try {
             sce.getServletContext().createListener(AdminServletContextListener.class);
         } catch (ServletException e) {
