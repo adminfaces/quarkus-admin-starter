@@ -34,6 +34,30 @@ NOTE: Only hotspot was tested and native mode will probably not work.
 
 * `git clone https://github.com/rmpestano/quarkus-myfaces && cd quarkus-myfaces/quarkus-myfaces && mvn clean install`
 
+[TIP]
+====
+
+To build the quarkus extension you need to add jboss maven repository to your maven settings.xml:
+
+----
+<repositories>
+    <repository>
+        <id>jboss</id>
+        <name>jboss repo</name>
+        <url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+    </repository>
+<repositories>
+<pluginRepositories>
+    <pluginRepository>
+        <id>jboss</id>
+        <name>jboss repo</name>
+        <url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+   </pluginRepository>
+</pluginRepositories>
+----
+
+====
+
 === Run Admin starter 
 
 Finally run this project: 
