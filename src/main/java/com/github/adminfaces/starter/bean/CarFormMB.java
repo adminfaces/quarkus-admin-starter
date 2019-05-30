@@ -72,7 +72,7 @@ public class CarFormMB implements Serializable {
     }
 
 
-    public void remove() throws IOException {
+    public void remove() {
         if (has(car) && has(car.getId())) {
             carService.remove(car);
             Utils.addDetailMessage("Car " + car.getModel()

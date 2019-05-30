@@ -32,8 +32,6 @@
                     <p:commandButton value="Delete" action="#{carFormMB.remove}" process="@this"
                                      rendered="#{not carFormMB.isNew()}" icon="fa fa-trash"
                                      styleClass="btn-danger">
-                        <f:setPropertyActionListener value="true"
-                                                     target="#{facesContext.externalContext.flash.keepMessages}"/>
                         <p:confirm header="Confirmation" message="Are you sure?" icon="ui-icon-danger"/>
                     </p:commandButton>
                     <p:spacer width="5"/>
