@@ -16,7 +16,7 @@
         Car form
     </ui:define>
     <ui:define name="body">
-        <adm:breadcrumb title="#{empty carFormMB.id ? 'New Car' : 'Car '.concat(carFormMB.id)}" link="/car-form?id=#{carFormMB.id}"/>
+        <adm:breadcrumb title="#{empty carFormMB.id ? 'New Car' : 'Car '.concat(carFormMB.id)}" link="/car-form.xhtml?id=#{carFormMB.id}"/>
         <h:form id="form" prependId="false">
             <p:focus context="@form"/>
             <p:panel styleClass="box-primary card">
