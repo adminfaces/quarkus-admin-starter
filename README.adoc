@@ -26,10 +26,6 @@ NOTE: Only hotspot was tested and native mode will probably not work.
 * `mvn versions:set -DnewVersion=3.0.0-M1 -DprocessAllModules` (NOTE: we need to update the version to M1 as Quarkus does _NOT_ support snapshots)
 * `mvn clean install -DskipTests`
 
-=== Build Admin Template
-
-* `git clone https://github.com/adminfaces/admin-template.git && cd admin-template && mvn versions:set -DnewVersion=1.0.1 && mvn clean install`
-   
 === Build quarkus-myfaces
 
 * `git clone https://github.com/rmpestano/quarkus-myfaces && cd quarkus-myfaces/quarkus-myfaces && mvn clean install`
