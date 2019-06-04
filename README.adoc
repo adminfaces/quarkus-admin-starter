@@ -61,6 +61,7 @@ Finally run this project:
 * `git clone https://github.com/adminfaces/quarkus-admin-starter && cd quarkus-admin-starter && mvn compile quarkus:dev`
 * access http://localhost:8080/
 
+TIP: Run via quarkus runner with `mvn clean package && java -jar target/quarkus-admin-starter-1.0-SNAPSHOT-runner.jar`
 
 == Docker
 
