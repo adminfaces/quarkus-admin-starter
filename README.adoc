@@ -40,14 +40,14 @@ To build the quarkus extension you need to add jboss maven repository to your ma
     <repository>
         <id>jboss</id>
         <name>jboss repo</name>
-        <url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+        <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
     </repository>
 </repositories>
 <pluginRepositories>
     <pluginRepository>
         <id>jboss</id>
         <name>jboss repo</name>
-        <url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+        <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
    </pluginRepository>
 </pluginRepositories>
 ----
