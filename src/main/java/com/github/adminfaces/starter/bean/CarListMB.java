@@ -4,12 +4,12 @@ import com.github.adminfaces.template.exception.BusinessException;
 import com.github.adminfaces.starter.infra.model.Filter;
 import com.github.adminfaces.starter.model.Car;
 import com.github.adminfaces.starter.service.CarService;
+import org.omnifaces.cdi.ViewScoped;
 import org.primefaces.model.LazyDataModel;
 import org.primefaces.model.SortOrder;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;

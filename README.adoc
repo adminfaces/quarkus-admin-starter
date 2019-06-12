@@ -14,7 +14,7 @@
 :caution-caption: :fire:
 :warning-caption: :warning:
 
-This project is based/depends on https://github.com/tandraschko/quarkus-myfaces[quarkus-myfaces prototype^] and shows a `responsive *JSF*` application running on https://quarkus.io/[Quarkus^]. 
+This project is based/depends on https://github.com/tandraschko/quarkus-myfaces[quarkus-myfaces^] and https://github.com/rmpestano/quarkus-omnifaces[quarkus-omnifaces^] extensions. This project shows a `responsive *JSF*` application running on https://quarkus.io/[Quarkus^].
 
 NOTE: Only hotspot was tested and native mode will probably not work.
  
@@ -28,7 +28,7 @@ NOTE: Only hotspot was tested and native mode will probably not work.
 
 === Build quarkus-myfaces
 
-* `git clone https://github.com/rmpestano/quarkus-myfaces && cd quarkus-myfaces/quarkus-myfaces && mvn clean install`
+* `git clone https://github.com/tandraschko/quarkus-myfaces && cd quarkus-myfaces/quarkus-myfaces && mvn clean install`
  
 [TIP]
 ====
@@ -54,6 +54,16 @@ To build the quarkus extension you need to add jboss maven repository to your ma
 
 ====
 
+=== Build quarkus-omnifaces
+
+Before building quarkus-omnifaces you need to install OmniFaces 3.4 (not released yet):
+
+`git clone https://github.com/omnifaces/omnifaces && mvn versions:set -DnewVersion=3.4 && mvn clean install -DskipTests`
+
+then build quarkus-omnifaces extension:
+
+`git clone https://github.com/rmpestano/quarkus-omnifaces && mvn clean install`
+
 === Run Admin starter 
 
 Finally run this project: 
@@ -61,7 +71,7 @@ Finally run this project:
 * `git clone https://github.com/adminfaces/quarkus-admin-starter && cd quarkus-admin-starter && mvn compile quarkus:dev`
 * access http://localhost:8080/
 
-TIP: Run via quarkus runner with `mvn clean package && java -jar target/quarkus-admin-starter-1.0-SNAPSHOT-runner.jar`
+TIP: Run via quarkus runner with `mvn clean package && java -jar target/quarkus-admin-starter-runner.jar`
 
 == Docker
 

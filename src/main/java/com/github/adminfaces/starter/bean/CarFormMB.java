@@ -7,14 +7,13 @@ package com.github.adminfaces.starter.bean;
 import com.github.adminfaces.starter.model.Car;
 import com.github.adminfaces.starter.service.CarService;
 import com.github.adminfaces.starter.util.Utils;
+import org.omnifaces.cdi.ViewScoped;
 import org.omnifaces.util.Faces;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.logging.Logger;
 

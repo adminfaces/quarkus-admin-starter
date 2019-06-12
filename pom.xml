@@ -9,7 +9,7 @@
     <name>Quarkus - AdminFaces - Starter</name>
 
     <properties>
-        <quarkus.version>0.15.0</quarkus.version>
+        <quarkus.version>0.16.1</quarkus.version>
         <failsafe.version>2.22.0</failsafe.version>
         <surefire.version>2.22.0</surefire.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -36,6 +36,11 @@
             <version>${quarkus.version}</version>
         </dependency>
         <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-omnifaces</artifactId>
+            <version>${quarkus.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
             <version>7.0</version>
@@ -58,11 +63,6 @@
             <!-- only for gravatar-->
         </dependency>
         <dependency>
-            <groupId>org.jboss.spec.javax.websocket</groupId>
-            <artifactId>jboss-websocket-api_1.1_spec</artifactId>
-            <version>1.1.4.Final</version>
-        </dependency>
-        <dependency>
             <groupId>javax.ejb</groupId>
             <artifactId>javax.ejb-api</artifactId>
             <version>3.2</version>
@@ -75,6 +75,7 @@
     </dependencies>
 
     <build>
+        <finalName>${artifactId}</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
