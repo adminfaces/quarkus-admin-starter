@@ -23,7 +23,6 @@ NOTE: Only hotspot was tested and native mode will probably not work.
 === Build MyFaces 
 
 * clone https://github.com/apache/myfaces.git 
-* `mvn versions:set -DnewVersion=3.0.0-M1 -DprocessAllModules` (NOTE: we need to update the version to M1 as Quarkus does _NOT_ support snapshots)
 * `mvn clean install -DskipTests`
 
 === Build quarkus-myfaces
