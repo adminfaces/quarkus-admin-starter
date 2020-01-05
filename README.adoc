@@ -67,4 +67,4 @@ to run via docker execute the following commands:
 
 OR run already pushed image:
 
-* `docker run -i --rm -p 8080:8080 rmpestano/quarkus-admin-starter`
+* `docker run -i --rm --name admin-starter -m 85M -e JAVA_OPTIONS='-Xmx32m -Xms32m' -p 8080:8080 rmpestano/quarkus-admin-starter`
