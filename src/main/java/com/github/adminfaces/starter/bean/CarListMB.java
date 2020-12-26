@@ -41,7 +41,7 @@ public class CarListMB implements Serializable {
     @PostConstruct
     public void initDataModel() {
         Logger.getLogger(getClass().getName()).info(getClass() + ": postConstruct");
-        cars = new LazyDataModel<Car>() {
+        cars = new LazyDataModel<>() {
             @Override
             public List<Car> load(int first, int pageSize,
                                   String sortField, SortOrder sortOrder,
@@ -67,7 +67,7 @@ public class CarListMB implements Serializable {
 
             @Override
             public Car getRowData(String key) {
-                return carService.findById(new Integer(key));
+                return carService.findById(Integer.valueOf(key));
             }
         };
     }
