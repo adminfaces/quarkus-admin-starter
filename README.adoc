@@ -14,18 +14,23 @@
 :caution-caption: :fire:
 :warning-caption: :warning:
 
-This project depends on https://github.com/apache/myfaces/tree/master/extensions/quarkus[quarkus-myfaces^] and https://github.com/rmpestano/quarkus-omnifaces[quarkus-omnifaces^] extensions. This project shows a `responsive *JSF*` application running on https://quarkus.io/[Quarkus^].
+This project shows a `responsive *JSF*` application using https://adminfaces.github.io/site/[AdminFaces^] and running on https://quarkus.io/[Quarkus^].
 
 NOTE: Only hotspot is supported.
 
-=== Run Admin starter
+== Running Admin starter
+
+=== Via Maven
 
 * `git clone https://github.com/adminfaces/quarkus-admin-starter && cd quarkus-admin-starter && mvn compile quarkus:dev`
 * access http://localhost:8080/
 
-TIP: Run via quarkus runner with `mvn clean package && java -jar target/quarkus-admin-starter-runner.jar`
 
-== Docker
+=== Via Java
+
+`mvn clean package && java -jar target/quarkus-admin-starter-runner.jar`
+
+=== Via Docker
 
 to run via docker execute the following commands:
 
