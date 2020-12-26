@@ -40,7 +40,7 @@ public class CarListMB implements Serializable {
 
     @PostConstruct
     public void initDataModel() {
-        Logger.getLogger(getClass().getName()).info(getClass()+": postConstruct");
+        Logger.getLogger(getClass().getName()).info(getClass() + ": postConstruct");
         cars = new LazyDataModel<Car>() {
             @Override
             public List<Car> load(int first, int pageSize,
@@ -74,7 +74,7 @@ public class CarListMB implements Serializable {
 
     @PreDestroy
     public void preDestroy() {
-        Logger.getLogger(getClass().getName()).info(getClass()+": preDestroy");
+        Logger.getLogger(getClass().getName()).info(getClass() + ": preDestroy");
     }
 
     public void clear() {

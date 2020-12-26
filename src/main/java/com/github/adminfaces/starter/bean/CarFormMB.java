@@ -25,8 +25,6 @@ import static com.github.adminfaces.template.util.Assert.has;
 @Named
 @ViewScoped
 public class CarFormMB implements Serializable {
-
-
     private Integer id;
     private Car car;
 
@@ -34,8 +32,8 @@ public class CarFormMB implements Serializable {
     CarService carService;
 
     public void init() {
-        if(Faces.isAjaxRequest()){
-           return;
+        if (Faces.isAjaxRequest()) {
+            return;
         }
         if (has(id)) {
             car = carService.findById(id);
@@ -46,12 +44,12 @@ public class CarFormMB implements Serializable {
 
     @PostConstruct
     public void postConstruct() {
-        Logger.getLogger(getClass().getName()).info(getClass()+": postConstruct");
+        Logger.getLogger(getClass().getName()).info(getClass() + ": postConstruct");
     }
 
     @PreDestroy
     public void preDestroy() {
-        Logger.getLogger(getClass().getName()).info(getClass()+": preDestroy");
+        Logger.getLogger(getClass().getName()).info(getClass() + ": preDestroy");
     }
 
     public Integer getId() {
@@ -101,6 +99,5 @@ public class CarFormMB implements Serializable {
     public boolean isNew() {
         return car == null || car.getId() == null;
     }
-
 
 }
