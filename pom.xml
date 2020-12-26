@@ -31,9 +31,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.quarkus</groupId>
+            <groupId>com.github.adminfaces</groupId>
             <artifactId>quarkus-omnifaces</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.primefaces</groupId>

@@ -17,42 +17,8 @@
 This project depends on https://github.com/apache/myfaces/tree/master/extensions/quarkus[quarkus-myfaces^] and https://github.com/rmpestano/quarkus-omnifaces[quarkus-omnifaces^] extensions. This project shows a `responsive *JSF*` application running on https://quarkus.io/[Quarkus^].
 
 NOTE: Only hotspot is supported.
- 
-== How to try it?
 
-
-=== Build quarkus-omnifaces
-
-
-`git clone https://github.com/rmpestano/quarkus-omnifaces && mvn clean install -DskipTests`
-
-[TIP]
-====
-
-To build the quarkus extension you need to add jboss maven repository to your maven settings.xml:
-
-----
-<repositories>
-    <repository>
-        <id>jboss</id>
-        <name>jboss repo</name>
-        <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
-    </repository>
-</repositories>
-<pluginRepositories>
-    <pluginRepository>
-        <id>jboss</id>
-        <name>jboss repo</name>
-        <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
-   </pluginRepository>
-</pluginRepositories>
-----
-
-====
-
-=== Run Admin starter 
-
-Finally run this project: 
+=== Run Admin starter
 
 * `git clone https://github.com/adminfaces/quarkus-admin-starter && cd quarkus-admin-starter && mvn compile quarkus:dev`
 * access http://localhost:8080/
