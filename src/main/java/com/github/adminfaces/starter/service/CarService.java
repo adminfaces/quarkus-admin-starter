@@ -38,9 +38,20 @@ public class CarService implements Serializable {
     }
 
     public List<Car> paginate(Filter<Car> filter) {
-        List<Car> pagedCars = null;
+        List<Car> pagedCars = new ArrayList<>();
+        if(has(filter.getSortOrder()) && !SortOrder.UNSORTED.equals(filter.getSortOrder())) {
+            pagedCars = allCars.stream().
+                    sorted((c1, c2) -> {
+                        if (filter.getSortOrder().isAscending()) {
+                            return c1.getId().compareTo(c2.getId());
+                        } else {
+                            return c2.getId().compareTo(c1.getId());
+                        }
+                    })
+                    .collect(Collectors.toList());
+        }
         int page = filter.getFirst() + filter.getPageSize();
-        if (filter.getParams().isEmpty()) {
+        if (!pagedCars.isEmpty() && filter.getParams().isEmpty()) {
             pagedCars = allCars.subList(filter.getFirst(), Math.min(page, allCars.size()));
             return pagedCars;
         }
