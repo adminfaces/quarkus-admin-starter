@@ -14,6 +14,7 @@ import javax.inject.Inject;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -37,22 +38,10 @@ public class CarService implements Serializable {
     }
 
     public List<Car> paginate(Filter<Car> filter) {
-        List<Car> pagedCars = new ArrayList<>();
-        if(has(filter.getSortOrder()) && !SortOrder.UNSORTED.equals(filter.getSortOrder())) {
-                pagedCars = allCars.stream().
-                    sorted((c1, c2) -> {
-                        if (filter.getSortOrder().isAscending()) {
-                            return c1.getId().compareTo(c2.getId());
-                        } else {
-                            return c2.getId().compareTo(c1.getId());
-                        }
-                    })
-                    .collect(Collectors.toList());
-            }
-
+        List<Car> pagedCars = null;
         int page = filter.getFirst() + filter.getPageSize();
         if (filter.getParams().isEmpty()) {
-            pagedCars = pagedCars.subList(filter.getFirst(), page > allCars.size() ? allCars.size() : page);
+            pagedCars = allCars.subList(filter.getFirst(), Math.min(page, allCars.size()));
             return pagedCars;
         }
 
@@ -66,7 +55,7 @@ public class CarService implements Serializable {
             pagedList = pagedList.subList(filter.getFirst(), page);
         }
 
-        if (has(filter.getSortField())) {
+        if (has(filter.getSortField()) && !SortOrder.UNSORTED.equals(filter.getSortOrder())) {
             pagedList = pagedList.stream().
                     sorted((c1, c2) -> {
                         boolean asc = SortOrder.ASCENDING.equals(filter.getSortOrder());
@@ -90,16 +79,16 @@ public class CarService implements Serializable {
 
         if (filter.hasParam("minPrice") && filter.hasParam("maxPrice")) {
             Predicate<Car> minMaxPricePredicate = (Car c) -> c.getPrice()
-                    >= Double.valueOf((String) filter.getParam("minPrice")) && c.getPrice()
-                    <= Double.valueOf((String) filter.getParam("maxPrice"));
+                    >= Double.parseDouble((String) filter.getParam("minPrice")) && c.getPrice()
+                    <= Double.parseDouble((String) filter.getParam("maxPrice"));
             predicates.add(minMaxPricePredicate);
         } else if (filter.hasParam("minPrice")) {
             Predicate<Car> minPricePredicate = (Car c) -> c.getPrice()
-                    >= Double.valueOf((String) filter.getParam("minPrice"));
+                    >= Double.parseDouble((String) filter.getParam("minPrice"));
             predicates.add(minPricePredicate);
         } else if (filter.hasParam("maxPrice")) {
             Predicate<Car> maxPricePredicate = (Car c) -> c.getPrice()
-                    <= Double.valueOf((String) filter.getParam("maxPrice"));
+                    <= Double.parseDouble((String) filter.getParam("maxPrice"));
             predicates.add(maxPricePredicate);
         }
 
@@ -124,16 +113,16 @@ public class CarService implements Serializable {
     }
 
     public List<String> getModels(String query) {
-        return allCars.stream().filter(c -> c.getModel()
-                .toLowerCase().contains(query.toLowerCase()))
-                .map(Car::getModel)
+        return allCars.stream().map(Car::getModel)
+                .filter(model -> model
+                        .toLowerCase().contains(query.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
     public void insert(Car car) {
         validate(car);
         car.setId(allCars.stream()
-                .mapToInt(c -> c.getId())
+                .mapToInt(Car::getId)
                 .max()
                 .getAsInt()+1);
         allCars.add(car);
@@ -153,14 +142,13 @@ public class CarService implements Serializable {
         }
 
         if (allCars.stream().filter(c -> c.getName().equalsIgnoreCase(car.getName())
-                && c.getId() != c.getId()).count() > 0) {
+                && !Objects.equals(c.getId(), c.getId())).count() > 0) {
             be.addException(new BusinessException("Car name must be unique"));
         }
         if(has(be.getExceptionList())) {
             throw be;
         }
     }
-
 
     public void remove(Car car) {
         allCars.remove(car);
@@ -182,7 +170,7 @@ public class CarService implements Serializable {
 
     public void update(Car car) {
         validate(car);
-        allCars.remove(allCars.indexOf(car));
+        allCars.remove(car);
         allCars.add(car);
     }
 }
