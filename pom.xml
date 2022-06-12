@@ -43,7 +43,7 @@
         <dependency>
             <groupId>com.github.adminfaces</groupId>
             <artifactId>admin-template</artifactId>
-            <version>1.6.0</version>
+            <version>1.6.1</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.omnifaces</groupId>
