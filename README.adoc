@@ -20,15 +20,19 @@ NOTE: Only hotspot is supported.
 
 == Running Admin starter
 
+== Requirements
+
+* maven `3.6.3` or greater
+* Java 17+
+
 === Via Maven
 
 * `git clone https://github.com/adminfaces/quarkus-admin-starter && cd quarkus-admin-starter && mvn compile quarkus:dev`
 * access http://localhost:8080/
 
-
 === Via Java
 
-`mvn clean package && java -jar target/quarkus-admin-starter-runner.jar`
+`mvn clean package && java -jar target/quarkus-app/quarkus-run.jar`
 
 === Via Docker
 

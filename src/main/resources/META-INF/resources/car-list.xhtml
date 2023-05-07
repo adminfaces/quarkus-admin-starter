@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="jakarta.faces.html"
+                xmlns:f="jakarta.faces.core" xmlns:ui="jakarta.faces.facelets"
                 xmlns:p="http://primefaces.org/ui"
                 xmlns:adm="http://github.com/adminfaces"
                 template="#{layoutMB.template}">
@@ -115,7 +115,7 @@
                         <p:column headerText="Price" sortBy="#{c.price}" filterBy="#{c.price}">
                             <f:facet name="filter">
                                 <p:spinner value="#{carListMB.filter.entity.price}">
-                                    <f:converter converterId="javax.faces.Double"/>
+                                    <f:converter converterId="jakarta.faces.Double"/>
                                     <p:ajax process="@this" update="@none" oncomplete="PF('carsTable').filter()"/>
                                 </p:spinner>
                             </f:facet>

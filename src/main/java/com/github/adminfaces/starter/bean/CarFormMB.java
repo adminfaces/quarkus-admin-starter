@@ -7,13 +7,13 @@ package com.github.adminfaces.starter.bean;
 import com.github.adminfaces.starter.model.Car;
 import com.github.adminfaces.starter.service.CarService;
 import com.github.adminfaces.starter.util.Utils;
-import org.omnifaces.cdi.ViewScoped;
+import jakarta.faces.view.ViewScoped;
 import org.omnifaces.util.Faces;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import javax.inject.Inject;
-import javax.inject.Named;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 import java.io.Serializable;
 import java.util.logging.Logger;
 
